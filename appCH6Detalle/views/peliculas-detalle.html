@@ -1,0 +1,32 @@
+<div class="detail-movie">
+<div>
+   <div class="col-md-3" >
+	<img src="{{ movie.posters.profile }}" class="movie">
+ </div>
+  <div class="col-md-9">
+      <h1>{{ movie.title }}</h1>
+      <p><strong>Synopsis :</strong>
+        {{ movie.synopsis }}
+
+      <p><strong>Critics Consensus :</strong>
+        {{ movie.critics_consensus }}
+      </p>
+      <h2>Genres</h2>
+      <ul>
+      <li ng-repeat="gen in genres">
+          {{gen}}
+      </li>
+      </ul>
+       </div> 
+</div>
+<div class="col-md-8">
+<div ng-repeat="review in reviews" >
+    <h6>{{ review.critic | uppercase }}</h6>
+    <span><strong>Fecha</strong> {{review.date  | date:dd/mm/YYYY }}</span>
+    <span><strong>Score</strong> {{ review.original_score }}</span>
+    <p>{{ review.quote }}</p>
+    
+  
+</div>
+</div>
+</div>

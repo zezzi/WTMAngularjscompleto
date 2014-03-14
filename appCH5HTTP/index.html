@@ -1,0 +1,52 @@
+<!doctype html>
+<!--Paso 1-->
+-->
+<html lang="en" ng-app="peliculasRankingApp"> 
+<head>
+  <meta charset="utf-8">
+  <title ng-bind-template="Angular Lima {{ query }}"> Angular Lima</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="lib/angular/angular.js"></script>
+</head>
+<body ng-controller="MoviesListCtrl">
+
+<!-- CODIGO COPIAR PASO 1  -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" class="movies_header">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Peliculas para rentar</a>
+        </div>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search" ng-model="search">
+           </div>
+        </form>
+      </div>
+</div>
+<div class="jumbotron">
+<div>
+  <a href="" ng-click="predicate = 'year';">Ordenar por Año </a>&nbsp;&nbsp;|&nbsp;
+  <a href="" ng-click="predicate = 'name';">Ordenar por Nombre </a>&nbsp;|&nbsp;
+  <a href="" ng-click="predicate = '';">Unsorted </a>&nbsp;&nbsp;|&nbsp;&nbsp;
+</div>
+<div class="container-fluid">
+
+    <div class="row">
+      <div class="col-md-2" ng-repeat="movie in movies | filter:search | orderBy:predicate ">
+        <div class="movies-item">
+          <img ng-src="{{ movie.posters.profile }}"  />
+          <h6>{{ movie.title }}</h6>
+          <p class="movie-text">{{ movie.synopsis.substring(0,200) }}</p>
+        </div>
+      </div>
+    </div>
+ </div>
+</div>
+
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+</body>
+</html>

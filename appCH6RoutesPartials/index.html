@@ -1,0 +1,25 @@
+<!doctype html>
+<!-- CH5 Route partials Paso 1-->
+<!-- Hablar del Injector y como funciona el compilador -->
+<!-- Modificar app js para que tenga las rutas-->
+<!-- Modificar el Main js para que tenga los dosc controladores -->
+<!-- Modificar index html para que solo tenga ng-view para que haga render de los partials -->
+<html lang="en" ng-app="peliculasRankingApp"> 
+<head>
+  <meta charset="utf-8">
+  <title ng-bind-template="Angular Lima {{ query }}"> Angular Lima</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+ <div ng-view></div>
+
+
+
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+</body>
+</html>

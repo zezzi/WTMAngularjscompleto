@@ -1,0 +1,23 @@
+<!-- CODIGO COPIAR PASO 1  -->
+
+
+
+<div class="jumbotron">
+<div>
+  <a href="" ng-click="predicate = 'year';">Ordenar por Año </a>&nbsp;&nbsp;|&nbsp;
+  <a href="" ng-click="predicate = 'title';">Ordenar por Nombre </a>&nbsp;|&nbsp;
+  <a href="" ng-click="predicate = '';">Unsorted </a>&nbsp;&nbsp;|&nbsp;&nbsp;
+</div>
+<div class="container-fluid">
+
+    <div class="row">
+      <div class="col-md-3" ng-repeat="movie in movies | filter:search | orderBy:predicate ">
+        <div class="movies-item">
+         <a href="#/peliculas/{{ movie.id }}" ><img ng-src="{{ movie.posters.profile }}"  /></a>
+          <h6><a href="#/peliculas/{{ movie.id }}" >{{ movie.title }}</a></h6>
+          <p class="movie-text">{{ movie.synopsis.substring(0,200) }}</p>
+        </div>
+      </div>
+    </div>
+ </div>
+</div>

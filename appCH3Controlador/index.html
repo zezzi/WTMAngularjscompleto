@@ -1,0 +1,49 @@
+<!doctype html>
+<!-- CH3 COntrolador Cambiar colocarle un nombre al ng-APP -->
+<!-- Iniciar el  angular.module en main js -->
+<!-- Iniciar el controlador con alguna informacion de JSON -->
+<!-- Eliminar la informacion adicional hacer un ng-repeat en las columnas -->
+<!-- Utilizar bataran para ver los scopes -->
+<html lang="en" ng-app="peliculasRankingApp"> 
+<head>
+  <meta charset="utf-8">
+  <title> Angular Lima</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="styles/main.css">
+  <script src="lib/angular/angular.js"></script>
+</head>
+<body ng-controller="MoviesListCtrl">
+
+<!-- CODIGO COPIAR PASO 1  -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" class="movies_header">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Peliculas para rentar</a>
+        </div>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+           </div>
+        </form>
+      </div>
+</div>
+<div class="jumbotron">
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2" ng-repeat="movie in movies">
+        <div class="movies-item">
+          <img src="images/{{ movie.image }}"  />
+          <h6>{{ movie.name }}</h6>
+          <p class="movie-text">{{ movie.descripcion }}</p>
+        </div>
+      </div>
+    </div>
+ </div>
+</div>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+</body>
+
+
+</html>
